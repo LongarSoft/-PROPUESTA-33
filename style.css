@@ -1,0 +1,182 @@
+body{
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Coloca los elementos a los lados */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 20px; /* Agrega espacio alrededor de los elementos */
+    background-color: #ffffff; /* Color de fondo azul */
+    color: white; /* Color de texto blanco */
+}
+
+header h2 {
+    margin: 0;
+    color: #1c283d; /* Elimina el margen predeterminado del h2 */
+}
+
+header button {
+    position: relative;
+    right: 20px;
+    color: #414141;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    border: solid #c0c0c0 1px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: transform 0.3s, background-color 0.3s, opacity 0.3s; /* Agrega transiciones para suavizar el cambio */
+}
+
+header button:hover {
+    transform: scale(1.05); /* Escala el botón al 110% del tamaño original */
+    background-color: #e0e0e0; /* Cambia el color de fondo al hacer hover */
+    opacity: 0.9; /* Reduce la opacidad al hacer hover */
+}
+
+.estado-propuesta{
+    color: #fff;
+    border: none;
+    padding: 11px 40px;
+    background-color: #f16507;
+}
+
+.estado-propuesta:hover{
+    background-color: #f37019;
+}
+
+.scrolled {
+    padding: 40px; /* Aumenta el padding */
+    position: fixed; /* Cambia a posición fija */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+main{
+    background-color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.scrolled-padding {
+    padding: 120px 10px; /* Aumenta el padding */
+}
+
+#factura{
+    background-color: #fff;
+    padding: 20px;
+}
+
+section.title-propuesta img{
+    width: 26vw;
+}
+
+section.subtitle-propuesta {
+    font-size: 20px; /* Tamaño de fuente más grande */
+    color: #354869; /* Color de texto diferente */
+    margin-bottom: 20px; /* Espacio inferior añadido */
+}
+
+section.text-propuesta {
+    font-size: 16px; /* Tamaño de fuente más grande */
+    color: #354869; /* Color de texto diferente */
+    margin-bottom: 20px; /* Espacio inferior añadido */
+}
+
+section.objectives {
+    font-size: 18px; /* Tamaño de fuente más grande */
+    color: #354869; /* Color de texto diferente */
+    margin-bottom: 20px; /* Espacio inferior añadido */
+}
+
+section.text-objectives {
+    font-size: 14px; /* Tamaño de fuente más grande */
+    color: #354869; /* Color de texto diferente */
+    margin-bottom: 20px; /* Espacio inferior añadido */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #354869; /* Cambia el color de fondo de la primera fila */
+    color: white; /* Cambia el color del texto en la primera fila */
+}
+
+th, td {
+    padding: 10px;
+    border: none; /* Elimina las líneas de la tabla */
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+td{
+    color: #1c283d;
+}
+
+section {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px; /* Añade espacio entre las secciones */
+}
+
+/* Elimina el borde inferior de la última sección */
+section:last-child, section:first-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.wide-column {
+    width: 100%; /* Ajusta el ancho de la columna "Servicio" según sea necesario */
+}
+
+.terminos-propuesta .title {
+    font-size: 18px; /* Tamaño de fuente más grande */
+    color: #354869; /* Color de texto diferente */
+    margin-bottom: 10px; /* Espacio inferior reducido */
+}
+
+.terminos-propuesta .text {
+    font-size: 14px; /* Tamaño de fuente más grande */
+    color: #1c283d; /* Color de texto de las celdas de la tabla */
+    margin-bottom: 20px; /* Espacio inferior añadido */
+}
+
+.soporte .title {
+    font-size: 18px; /* Tamaño de fuente más grande */
+    color: #354869; /* Color de texto diferente */
+    margin-bottom: 10px; /* Espacio inferior reducido */
+}
+
+.soporte .text {
+    font-size: 14px; /* Tamaño de fuente más grande */
+    color: #1c283d; /* Color de texto de las celdas de la tabla */
+    margin-bottom: 20px; /* Espacio inferior añadido */
+}
+
+footer{
+    text-align: center;
+    padding: 1vw;
+    background-color: #e6e6e6;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.title-propuesta img{
+        width: 30vw;
+    }
+
+    .scrolled-padding {
+        padding: 120px 0; /* Aumenta el padding */
+    }
+}
