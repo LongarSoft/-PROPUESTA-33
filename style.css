@@ -1,76 +1,90 @@
-body{
+body {
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
-    display: flex;
-    justify-content: space-between; /* Coloca los elementos a los lados */
-    align-items: center; /* Centra verticalmente los elementos */
-    padding: 20px; /* Agrega espacio alrededor de los elementos */
-    background-color: #ffffff; /* Color de fondo azul */
-    color: white; /* Color de texto blanco */
+    display: flex; /* Asegura que se utilice flex */
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #354869;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s;
+}
+
+.scrolled {
+    /* Estilos cuando se desplaza hacia abajo */
+    transform: translateY(-100%);
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+header.fixed {
+    position: fixed;
+    top: 0;
 }
 
 header h2 {
     margin: 0;
-    color: #1c283d; /* Elimina el margen predeterminado del h2 */
+    color: #354869;
 }
 
-header button {
-    position: relative;
-    right: 20px;
+.button, .estado-propuesta {
     color: #414141;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f0f0;
     border: solid #c0c0c0 1px;
     border-radius: 10px;
     padding: 10px 20px;
-    transition: transform 0.3s, background-color 0.3s, opacity 0.3s; /* Agrega transiciones para suavizar el cambio */
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s, opacity 0.3s;
+    text-align: center;
+    max-width: 90%; /* Se ajusta el ancho máximo */
 }
 
-header button:hover {
-    transform: scale(1.05); /* Escala el botón al 110% del tamaño original */
-    background-color: #e0e0e0; /* Cambia el color de fondo al hacer hover */
-    opacity: 0.9; /* Reduce la opacidad al hacer hover */
+.button:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+    opacity: 0.9;
 }
 
-.estado-propuesta{
+.estado-propuesta {
     color: #fff;
-    border: none;
-    padding: 11px 40px;
     background-color: #f16507;
+    cursor: default;
+    border: none; /* Eliminar el borde ya que está en el enlace también */
 }
 
-.estado-propuesta:hover{
+.estado-propuesta:hover {
     background-color: #f37019;
 }
 
-.scrolled {
-    padding: 40px; /* Aumenta el padding */
-    position: fixed; /* Cambia a posición fija */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+.scrolled-padding {
+    padding: 120px 0; /* Aumenta el padding */
 }
 
-main{
-    background-color: #e0e0e0;
+main {
+    margin-top: 80px;
+    background-color: #dddddd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
 
-.scrolled-padding {
-    padding: 120px 10px; /* Aumenta el padding */
-}
-
-#factura{
+#factura {
     background-color: #fff;
-    padding: 20px;
+    padding: 20px 20px;
 }
 
-section.title-propuesta img{
+section.title-propuesta img {
     width: 26vw;
 }
 
@@ -98,11 +112,11 @@ section.text-objectives {
     margin-bottom: 20px; /* Espacio inferior añadido */
 }
 
-
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    font-size: 13px; /* Tamaño de fuente para la tabla */
 }
 
 thead {
@@ -115,10 +129,15 @@ th, td {
     border: none; /* Elimina las líneas de la tabla */
     vertical-align: top;
     border-bottom: 1px solid #ccc;
+    font-size: inherit; /* Hereda el tamaño de fuente de la tabla */
 }
 
-td{
-    color: #1c283d;
+th strong, td strong {
+    font-size: 15px; /* Hereda el tamaño de fuente de la tabla */
+}
+
+td {
+    color: #1c283d; /* Color de texto de las celdas de la tabla */
 }
 
 section {
@@ -160,7 +179,66 @@ section:last-child, section:first-child {
     margin-bottom: 20px; /* Espacio inferior añadido */
 }
 
-footer{
+.information {
+    margin: 20px;
+}
+
+.direction {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.direction h3 {
+    color: #354869;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact-information .title {
+    color: #354869;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.information p {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    color: #354869; /* Color azul */
+}
+
+.contact-information .text {
+    font-size: 14px;
+    color: #354869;
+}
+
+.invoice-information .total {
+    color: #354869;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.invoice-information .status {
+    font-size: 16px;
+    color: #f16507;
+    font-weight: bold;
+}
+
+.invoice-information span {
+    color: #354869;
+    font-weight: 600;
+}
+
+.invoice-information .fecha,
+.invoice-information .fecha-valida {
+    font-size: 14px;
+    color: #354869;
+    margin-top: 5px;
+}
+
+footer {
     text-align: center;
     padding: 1vw;
     background-color: #e6e6e6;
@@ -172,11 +250,41 @@ footer{
         flex-direction: column;
     }
 
-    section.title-propuesta img{
+    section.title-propuesta img {
         width: 30vw;
     }
 
     .scrolled-padding {
         padding: 120px 0; /* Aumenta el padding */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main{
+        margin-top: 160px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h2 {
+        font-size: 3vh;
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .header-right .button,
+    .header-right .estado-propuesta {
+        width: 80%;
+        text-align: center;
     }
 }
